@@ -1,0 +1,7 @@
+langgraph
+langchain_openai
+langchain_community
+docx2txt
+langchain_huggingface
+python-dotenv
+langchain-qdrant
