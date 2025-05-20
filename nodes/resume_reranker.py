@@ -70,6 +70,7 @@ if __name__ == "__main__":
 
     model = load_model()
     top_ranked = rank_resumes(model, rephrased_query, top_k_resumes)
+    print(top_ranked)
 
     # Display results
     for i, resume in enumerate(top_ranked, 1):

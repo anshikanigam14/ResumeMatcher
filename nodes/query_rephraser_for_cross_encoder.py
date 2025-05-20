@@ -17,20 +17,13 @@ Input : {original_query}, {input_jd}
 
 Input Description :
 1. original_query -  A search query entered by the recruiter specifying the desired candidate profile (e.g., skills, role, experience).
-2. input_jd - The detailed job description outlining the requirements that candidate resumes should align with.
+2. input_jd - A detailed Job Description (JD) outlining the expectations for the role, required qualifications, technical and soft skills, years of experience, domain knowledge, tools, platforms, and any additional requirements.
 
-Task Description :
 
-You are provided with two inputs:
-• original_query: A free-text search query written by a recruiter to find relevant resumes from a large resume database. The query may include desired skills, experience, technologies, certifications, education level, job role, domain expertise, or any other attributes.
-• input_jd: A detailed Job Description (JD) outlining the expectations for the role, required qualifications, technical and soft skills, years of experience, domain knowledge, tools, platforms, and any additional requirements.
-
-Objective
-
+Objective :
 Your task is to generate a single rephrased query that combines and preserves **all important information** from both the `original_query` and the `input_jd`. This rephrased query will be used to retrieve the most relevant candidate resumes from a semantic search engine.
 
-Guidelines
-
+Guidelines :
 • Carefully extract and retain all critical details from both the recruiter's original query and the job description.
 • Pay special attention to:
     – Job role or title
@@ -43,8 +36,7 @@ Guidelines
 • Write the final query in natural, concise language suitable for a semantic search.
 • The final query must be under 5000 words.
 
-Output Format
-
+Output Format :
 Return only the rephrased query string.
 """
 
