@@ -17,16 +17,32 @@ load_dotenv()
 QDRANT_API_KEY = os.environ.get("QDRANT_API_KEY")
 QDRANT_URL = os.environ.get("QDRANT_URL")
 OPENAI_EMBEDDING_MODEL = os.environ.get("OPENAI_EMBEDDING_MODEL")
-collection_name = "GYANSYS-ResumeMatcher"
+
 embedding_model = OpenAIEmbeddings(model=OPENAI_EMBEDDING_MODEL)
+
+def get_client(url, api_key):
+    client = QdrantClient(url=url, api_key=api_key)
+    return client
+
+
+def get_collection_name():
+    return "GYANSYS-ResumeMatcher"
+
+
+def get_embedding_model():
+    OPENAI_EMBEDDING_MODEL = os.environ.get("OPENAI_EMBEDDING_MODEL")
+    return OpenAIEmbeddings(model=OPENAI_EMBEDDING_MODEL)
 
 
 def ingest_qdrant_db(folder_path):
     all_parsed_documents = get_formatted_resume(folder_path)
-    client = QdrantClient(url=QDRANT_URL, api_key=QDRANT_API_KEY)
 
     # Check and delete collection if exists
+    client = get_client(QDRANT_URL, QDRANT_API_KEY)
+    embedding_model = get_embedding_model()
     collections = client.get_collections().collections
+    collection_name = get_collection_name()
+    
     if any(c.name == collection_name for c in collections):
         client.delete_collection(collection_name=collection_name)
         print(f"Collection '{collection_name}' deleted successfully.")

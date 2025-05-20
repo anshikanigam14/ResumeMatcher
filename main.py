@@ -15,6 +15,11 @@ if __name__ == "__main__":
     ingest_qdrant_db(folder_path)
     
     
+    # 
+    
+    process_job_description
+    
+    
 
     
 
