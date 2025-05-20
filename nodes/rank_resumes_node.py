@@ -42,9 +42,10 @@ def process_resume(model, query, resume_key, generated_summary):
 def rank_resumes(model, query, resumes, k):
     results = []
     for resume_entry in resumes:
-        for resume_key, generated_summary in resume_entry.items():
-            result = process_resume(model, query, resume_key, generated_summary)
-            results.append(result)
+        resume_key = resume_entry.metadata["resume_id"]
+        generated_summary = resume_entry.page_content
+        result = process_resume(model, query, resume_key, generated_summary)
+        results.append(result)
     
     sorted_results = sorted(results, key=lambda x: x["weighted_score"], reverse=True)
 

@@ -13,9 +13,11 @@ if __name__ == "__main__":
     query = "Give me most relevant resume for a candidate working as 'SAP SD CONSULTANT' for more than 2 years."
     
     # initialise qdrant db and ingest formatted resume
+    print("Ingesting given corpus of resumes...")
     ingest_qdrant_db(folder_path)
     
     # Process Job Description and user query
+    print("Getting relevant candidates...")
     result = get_relevant_candidates(jd_text_1, query)
     
     # Print result

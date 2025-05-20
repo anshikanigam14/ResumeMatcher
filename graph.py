@@ -50,4 +50,4 @@ def get_relevant_candidates(raw_jd_text, user_query):
     # Execute the graph
     result = graph.invoke(initial_state)
     
-    return result["final_output"]
+    return result
