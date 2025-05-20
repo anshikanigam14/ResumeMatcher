@@ -4,6 +4,7 @@ Entry Point
 
 from example_jd_text import jd_text_1
 from clients.qdrant import ingest_qdrant_db
+from graph import get_relevant_candidates
 
 if __name__ == "__main__":
     folder_path = "/Users/toothless/practice/interview-assignments/gyansys/test_data" 
@@ -14,19 +15,9 @@ if __name__ == "__main__":
     # initialise qdrant db and ingest formatted resume
     ingest_qdrant_db(folder_path)
     
-    
-    # 
-    
-    process_job_description
-    
-    
-
-    
-
-    
-    # Process job description
-    result = process_job_description(jd_text_1, query, top_k=3)
+    # Process Job Description and user query
+    result = get_relevant_candidates(jd_text_1, query)
     
     # Print result
     print("\nFinal Recommendation:")
-    print(result)
+    print(result["ranked_resumes_explained"])
