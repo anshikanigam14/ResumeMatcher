@@ -144,7 +144,6 @@ def llm_feature_extractor(all_resume_parsed):
 
 
 def get_formatted_resume(folder_path):
-    # folder_path = "/Users/toothless/practice/interview-assignments/gyansys/test_data/"
     all_doc_texts_output = docx_parser(folder_path)
     all_formatted_resumes = llm_feature_extractor(all_doc_texts_output)
     # print(all_doc_texts_output[0])
