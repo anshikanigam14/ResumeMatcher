@@ -1,5 +1,4 @@
-Final Recommendation with Justification :
-# Job Requirement
+## Job Requirement
 
 Find a candidate for the role of 'SAP SD Consultant' with over 2 years of experience, ideally between 3 to 6 years, who can work onsite in Bangalore and is available to start immediately or within 15 days. The candidate should have hands-on experience in configuring and supporting SAP SD processes, including Order-to-Cash (OTC), Pricing, Billing, Shipping, and Delivery, and should be capable of handling integration with other SAP modules such as FI, MM, EWM, TM, and CPI. They should be skilled in developing and supporting functional specifications for custom development, including reports, interfaces, enhancements, and data migration using LSMW. The candidate must be able to work closely with business users to gather and document requirements, translating them into SAP solutions, and should have experience implementing and supporting third-party sales, returns automation, and credit management. Coordination with technical teams for API/Webservices integration and CPI middleware projects is essential. The candidate should manage status profiles, user exits, output determination, and ATP configurations, and have experience leading small to mid-sized SAP SD rollout and automation projects. Required skills include a strong understanding of organizational structures and enterprise structure assignments in SD, solid knowledge of SD module integration with EWM, TM, FI, MM, and CPI, and experience with API/Webservices and CPI-based integrations. Proficiency in business documentation, including Functional Specifications and SOPs, is necessary. A certification in SAP SD or equivalent work experience is required, and good problem-solving skills with exposure to Vistex, Amazon, Mandix, or BTP projects are a plus.
 
@@ -54,5 +53,6 @@ Find a candidate for the role of 'SAP SD Consultant' with over 2 years of experi
 
 ---
 
-Evaluation Results of Recommendation :
+## Evaluation Results of Recommendation
+
 {'faithfulness': 0.8571, 'answer_relevancy': 0.8593}
