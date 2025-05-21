@@ -94,16 +94,16 @@ File to be referred : results.md
 
     I plan to leverage LangGraph interrupts to incorporate human feedback, such as:
 
-    •	Prompting the user to confirm if they are satisfied with the rephrased query, allowing them to revise it if needed.
+    - Prompting the user to confirm if they are satisfied with the rephrased query, allowing them to revise it if needed.
 
-        •	Asking the user to update candidate statuses, for example marking candidates as unavailable if applicable.
+    - Asking the user to update candidate statuses, for example marking candidates as unavailable if applicable.
 
 
 2.	Implement Guardrails for PII:
 
-    To prevent storing sensitive data like gender, email, and phone numbers in the vector database. This might also help in avoiding bias.
+    - To prevent storing sensitive data like gender, email, and phone numbers in the vector database. This might also help in avoiding bias.
 
-    I experimented with DetectPII from Guardrail-AI but it removed relevant details like total years of experience. I am exploring alternatives like Nvidia NeMo to more accurately filter out PII without losing key information.
+    - I experimented with DetectPII from Guardrail-AI but it removed relevant details like total years of experience. I am exploring alternatives like Nvidia NeMo to more accurately filter out PII without losing key information.
 
 3. Optimise for Scalability & Performance
 
