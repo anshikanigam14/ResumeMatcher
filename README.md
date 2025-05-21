@@ -35,7 +35,7 @@ For testing purposes, only 5 resumes were ingested, and the top 3 matches were r
         c. page_content : contains overall_summary; metadata : contains role, resume_id(resume path), total_experience_in_years, status
 
 
-    *[Files to be referred : clients/openai_resume_parser, clients/qdrant.py]*
+*[Files to be referred : clients/openai_resume_parser, clients/qdrant.py]*
 
 
 ![Alt text](screenshots/ingestion-1.png)
