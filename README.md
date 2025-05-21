@@ -38,8 +38,8 @@ For testing purposes, only 5 resumes were ingested, and the top 3 matches were r
     *[Files to be referred : clients/openai_resume_parser, clients/qdrant.py]*
 
 
-    ![Alt text](ingestion_screenshots/ingestion-1.png)
-    ![Alt text](ingestion_screenshots/ingestion-2.png)
+    ![Alt text](screenshots/ingestion-1.png)
+    ![Alt text](screenshots/ingestion-2.png)
 
 ---
 
