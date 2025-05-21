@@ -1,19 +1,10 @@
 import os
 
 import docx2txt
-from dotenv import load_dotenv
+from clients.openai import get_llm
 from langchain.prompts import PromptTemplate
 from langchain.schema import Document
 from langchain_core.output_parsers import JsonOutputParser
-from langchain_openai import ChatOpenAI
-
-load_dotenv()
-OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
-
-llm = ChatOpenAI(
-    model="gpt-4o",
-    temperature=0
-)
 
 feature_extractor_prompt = """
         Task Description
@@ -117,6 +108,8 @@ def docx_parser(folder_path):
 
 
 def llm_feature_extractor(all_resume_parsed):
+    
+    llm = get_llm()
     all_formatted_resumes = []
     parser = JsonOutputParser()
     feature_prompt = PromptTemplate(
@@ -133,6 +126,10 @@ def llm_feature_extractor(all_resume_parsed):
         overall_summary = llm_parsed_resume["overall_summary"]
         metadata_keys = ["role", "resume_id", "total_experience_in_years"]
         metadata = {key: llm_parsed_resume[key] for key in metadata_keys if key in llm_parsed_resume}
+        
+        # To be changed by human in the loop (feedback)
+        metadata["status"] = "Available"
+        
         # Create LangChain Document
         formatted_resume = Document(
             page_content=overall_summary,
@@ -144,8 +141,7 @@ def llm_feature_extractor(all_resume_parsed):
 
 
 def get_formatted_resume(folder_path):
+    print(f"Running {__name__}...")
     all_doc_texts_output = docx_parser(folder_path)
     all_formatted_resumes = llm_feature_extractor(all_doc_texts_output)
-    # print(all_doc_texts_output[0])
-    # print(all_formatted_resumes[0])
     return all_formatted_resumes

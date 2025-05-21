@@ -57,6 +57,7 @@ def rank_resumes(model, query, resumes, k):
 
 
 def get_ranked_resumes(state: GraphState):
+    print(f"Running {__name__}...")
     k = 5
     rephrased_jd = state["rephrased_jd"]
     top_k_resumes = state["retrieved_resumes"]

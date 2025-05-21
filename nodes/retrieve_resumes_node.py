@@ -6,6 +6,7 @@ from state import GraphState
 
 
 def retrieve_resumes(state: GraphState):
+    print(f"Running {__name__}...")
     client = get_client(QDRANT_URL, QDRANT_API_KEY)
     filter_condition = Filter(
         should=[

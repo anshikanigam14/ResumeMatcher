@@ -5,3 +5,5 @@ docx2txt
 langchain_huggingface
 python-dotenv
 langchain-qdrant
+guardrails-ai>=0.5.13
+ragas

@@ -5,14 +5,13 @@ Creates a vector db if the collection does not exists and ingests formatted resu
 
 from langchain_qdrant import QdrantVectorStore
 from langchain_openai import OpenAIEmbeddings
-from qdrant_client import QdrantClient  # Needed for collection ops
+from qdrant_client import QdrantClient  
 from dotenv import load_dotenv
 from clients.openai_resume_parser import get_formatted_resume
 import os
 from qdrant_client.models import Distance
 
 
-# Load environment variables
 load_dotenv()
 QDRANT_API_KEY = os.environ.get("QDRANT_API_KEY")
 QDRANT_URL = os.environ.get("QDRANT_URL")
@@ -35,6 +34,7 @@ def get_embedding_model():
 
 
 def ingest_qdrant_db(folder_path):
+    print(f"Running {__name__}...")
     all_parsed_documents = get_formatted_resume(folder_path)
 
     # Check and delete collection if exists
