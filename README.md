@@ -83,16 +83,11 @@ For testing purposes, only 5 resumes were ingested, and the top 3 matches were r
 File to be referred : results.md
 
 
-## Graph Workflow Diagram
-
-![Alt text](screenshots/workflow.png)
-  
-
 ## To Do (In Progress)
 
 1.	Implement Human-in-the-Loop:
 
-    I plan to leverage LangGraph interrupts to incorporate human feedback, such as:
+    I plan to leverage LangGraph *interrupt* to incorporate human feedback, such as:
 
     - Prompting the user to confirm if they are satisfied with the rephrased query, allowing them to revise it if needed.
 
@@ -110,3 +105,10 @@ File to be referred : results.md
 4. Implement automated feedback loops
 
 5. Bias Mitigation
+6. Add UI for user testing
+7. Improve data ingestion, incorporate clustering in data storage in vector db for faster retrieval
+
+
+### Graph Workflow Diagram 
+
+![Alt text](screenshots/workflow.png)
