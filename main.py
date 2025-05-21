@@ -25,6 +25,7 @@ if __name__ == "__main__":
     print("Running Graph...")
     result = get_relevant_candidates(jd_text_1, query)
     
+    
     # Print result)
     print("\nFinal Recommendation with Justification :")
     print(result["ranked_resumes_explained"])

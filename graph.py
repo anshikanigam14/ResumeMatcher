@@ -1,11 +1,13 @@
-from langgraph.graph import StateGraph, START, END
-from nodes.rephrase_job_description_node import rephrase_job_description
+from graphviz import Source
+from langgraph.graph import END, START, StateGraph
+from nodes.explain_rankings_node import explain_rankings
 from nodes.human_in_loop_node import human_in_loop
 from nodes.rank_resumes_node import get_ranked_resumes
-from nodes.explain_rankings_node import explain_rankings
-from nodes.retrieve_resumes_node import retrieve_resumes
 from nodes.recommendation_evaluator_node import recommendation_evaluator
+from nodes.rephrase_job_description_node import rephrase_job_description
+from nodes.retrieve_resumes_node import retrieve_resumes
 from state import GraphState
+
 # from langgraph.checkpoint.memory import MemorySaver
 # from langgraph.types import Interrupt
     
@@ -52,6 +54,11 @@ def get_relevant_candidates(raw_jd_text, user_query):
     # Create the graph
     graph = build_resume_matcher_graph()
     
+    # save workflow
+    dot_str = graph.get_graph().to_dot_string()
+    src = Source(dot_str)
+    src.render(filename='resume_matcher_graph', format='png', cleanup=True)
+
     # Initialize the state
     initial_state = {
         "raw_job_description": raw_jd_text,
