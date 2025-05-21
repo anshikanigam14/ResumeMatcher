@@ -5,5 +5,7 @@ mynotes.md
 .DS_Store
 testing/
 __pycache__/
+*.py[cod]
+*$py.class
 
 
