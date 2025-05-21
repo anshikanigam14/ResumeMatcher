@@ -26,10 +26,9 @@ if __name__ == "__main__":
     result = get_relevant_candidates(jd_text_1, query)
     
     # Print result)
-    print("##################################################################################")
     print("\nFinal Recommendation with Justification :")
     print(result["ranked_resumes_explained"])
     print("\n")
-    print("##################################################################################")
+    print("---")
     print("Evaluation Results of Recommendation :")
     print(result["evaluation_result"])

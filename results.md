@@ -1,5 +1,3 @@
-##################################################################################
-
 Final Recommendation with Justification :
 # Job Requirement
 
@@ -54,6 +52,7 @@ Find a candidate for the role of 'SAP SD Consultant' with over 2 years of experi
 - **Validation of Ranks**: The given ranks are appropriate based on the alignment of each candidate's experience and skills with the job requirements. Candidate 2's comprehensive experience and certifications justify their top rank, while Candidate 1's lesser experience and project exposure explain their lower rank.
 
 
-##################################################################################
+---
+
 Evaluation Results of Recommendation :
 {'faithfulness': 0.8571, 'answer_relevancy': 0.8593}
